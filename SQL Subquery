@@ -2,19 +2,19 @@ select avg(average.sum_of_paid_amount) as avg_of_best_customers_payment
 
 from
 
-(SELECT
+       (SELECT
 
-A.customer_id,
+       A.customer_id,
 
-A.first_name,
+       A.first_name,
 
-A.last_name,
+       A.last_name,
 
-D.country,
+       D.country,
 
-C.city,
+       C.city,
 
-sum(E.amount) AS Sum_of_paid_amount
+       sum(E.amount) AS Sum_of_paid_amount
 
 FROM customer A
 
@@ -46,16 +46,16 @@ D.country = 'Turkey' or
 
 D.country = 'Indonesia'
 
-group by A.first_name,
+        group by A.first_name,
 
-A.last_name,
+        A.last_name,
 
-A.customer_id,
+        A.customer_id,
 
-D.country,
+        D.country,
 
-C.city
+        C.city
 
-order by sum(E.amount) desc
+        order by sum(E.amount) desc
 
-limit 5) as average
+        limit 5) as average
